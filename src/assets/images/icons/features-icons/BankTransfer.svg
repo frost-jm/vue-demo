@@ -1,0 +1,13 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Bank Transfer">
+<rect id="base" x="5.38477" y="31.5385" width="29.2308" height="3.07692" rx="0.626405" stroke="#025AE9" stroke-width="1.69231"/>
+<path id="line" d="M8.46191 16.1538V31.5384" stroke="#025AE9" stroke-width="1.69231" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="line_2" d="M13.0771 16.1538V31.5384" stroke="#025AE9" stroke-width="1.69231" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="line_3" d="M17.6924 16.1538V31.5384" stroke="#025AE9" stroke-width="1.69231" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="line_4" d="M22.3076 16.1538V31.5384" stroke="#025AE9" stroke-width="1.69231" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="line_5" d="M26.9229 16.1538V31.5384" stroke="#025AE9" stroke-width="1.69231" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="line_6" d="M31.5381 16.1538V31.5384" stroke="#025AE9" stroke-width="1.69231" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="shape" d="M6.154 12.5641H8.5979C8.74531 12.5641 8.88962 12.5218 9.01364 12.4421L19.5844 5.65171C19.8377 5.489 20.1626 5.489 20.4159 5.65171L30.9867 12.4421C31.1107 12.5218 31.255 12.5641 31.4024 12.5641H33.8463C34.2711 12.5641 34.6155 12.9085 34.6155 13.3334V15.3846C34.6155 15.8095 34.2711 16.1539 33.8463 16.1539H6.154C5.72916 16.1539 5.38477 15.8095 5.38477 15.3846V13.3334C5.38477 12.9085 5.72916 12.5641 6.154 12.5641Z" stroke="#025AE9" stroke-width="1.69231" stroke-linecap="round" stroke-linejoin="round"/>
+<circle id="shape_2" opacity="0.4" cx="1.53846" cy="1.53846" r="1.53846" transform="matrix(1 0 0 -1 18.4619 13.8462)" fill="#025AE9"/>
+</g>
+</svg>

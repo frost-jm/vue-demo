@@ -1,0 +1,296 @@
+@import '../../assets/less/style.less';
+
+.YearEndReview-Page2 {
+	@this: YearEndReview-Page2;
+
+	background-color: @color-blue-6;
+	position: relative;
+	height: 100%;
+	overflow: hidden;
+	color: @color-white;
+
+	//YearEndReview-Page2__bkg-img
+	&__bkg-img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		object-position: top center;
+		pointer-events: none;
+	}
+
+	//YearEndReview-Page2__top
+	&__top {
+		position: absolute;
+		top: 12%;
+		left: 0;
+		right: 0;
+
+		@media (min-width: 700px) {
+			top: 10%;
+		}
+	}
+
+	//YearEndReview-Page2__logo
+	&__logo {
+		display: block;
+		width: 28%;
+		margin: 0 auto;
+		opacity: 0;
+	}
+
+	//YearEndReview-Page2__title
+	&__title {
+		margin: 0 auto;
+		text-align: center;
+		font-family: @font-GothamRndSSm-Bold;
+		font-size: 5vw;
+		font-weight: 700;
+		line-height: normal;
+		letter-spacing: 5.4px;
+		display: flex;
+		flex-direction: column;
+		width: 60%;
+		position: relative;
+		z-index: 1;
+		align-items: center;
+		justify-content: center;
+
+		@media (min-width: 700px) {
+			width: 50%;
+		}
+
+		&-1,
+		&-2,
+		&-3 {
+			opacity: 0;
+			margin-bottom: 8px;
+			width: 100%;
+		}
+
+		&-1 {
+			animation-delay: 1.7s;
+		}
+
+		&-2 {
+			max-width: 83%;
+			animation-delay: 2s;
+		}
+
+		&-3 {
+			margin-bottom: 0;
+			animation-delay: 2.2s;
+		}
+	}
+
+	//YearEndReview-Page2__animate
+	&__animate {
+		img {
+			width: 100%;
+		}
+	}
+
+	//YearEndReview-Page2__star-green
+	&__star-green {
+		width: 15%;
+		top: 10%;
+		left: 5%;
+		opacity: 0;
+	}
+
+	//YearEndReview-Page2__semicircle
+	&__semicircle {
+		width: 22%;
+		top: 25%;
+		left: -5%;
+		opacity: 0;
+	}
+
+	//YearEndReview-Page2__globe
+	&__globe {
+		width: 47%;
+		top: 10%;
+		right: -10%;
+		opacity: 0;
+	}
+
+	//YearEndReview-Page2__snowflake
+	&__snowflake {
+		width: 25%;
+		top: 40%;
+		right: 5%;
+		opacity: 0;
+	}
+
+	//YearEndReview-Page2__star-blue
+	&__star-blue {
+		width: 13%;
+		top: 35%;
+		left: 15%;
+		opacity: 0;
+	}
+
+	//YearEndReview-Page2__content
+	&__content {
+		position: absolute;
+		bottom: 25%;
+		left: 0;
+		right: 0;
+
+		@media (min-width: 700px) {
+			bottom: 29%;
+		}
+	}
+
+	//YearEndReview-Page2__heading
+	&__heading {
+		max-width: 80%;
+		margin: 0 auto 0;
+		font-family: @font-GothamRndSSm-Bold;
+		font-size: 5vw;
+		line-height: 140%;
+		letter-spacing: -0.54px;
+		text-align: center;
+		opacity: 0;
+	}
+
+	//YearEndReview-Page2__description
+	&__description {
+		max-width: 90%;
+		margin: 8px auto 0;
+		font-family: @font-Gilroy-Medium;
+		font-size: 3.8vw;
+		line-height: 140%;
+		text-align: center;
+		opacity: 0;
+	}
+
+	.YearEndReview-Btn__primary,
+	.YearEndReview-Btn__secondary {
+		margin: 0 auto 8px;
+		opacity: 0;
+	}
+
+	//YearEndReview-Btn__policy
+	.YearEndReview-Btn__policy {
+		display: block;
+		padding: 3.3vw;
+		margin-top: 16px;
+		font-size: 3.2vw;
+		line-height: 100%;
+		text-decoration: none;
+		font-family: @font-GothamRndSSm-Bold;
+		text-align: center;
+		opacity: 0;
+	}
+
+	//YearEndReview-Page2__cta
+	&__cta {
+		max-width: 90%;
+		margin: 0 auto;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+
+	/************
+    // ANIMATION
+    ************/
+	&.active {
+		.@{this}__bkg-img {
+			animation: opacityShow 3s;
+			animation-fill-mode: forwards;
+		}
+
+		.@{this}__logo {
+			animation: slideInUp 1s;
+			animation-fill-mode: forwards;
+			animation-delay: 1.5s;
+		}
+
+		.@{this}__title-1,
+		.@{this}__title-2,
+		.@{this}__title-3 {
+			animation-name: slideInUp;
+			animation-duration: 1s;
+			animation-fill-mode: forwards;
+		}
+
+		.@{this}__star-green {
+			animation: fadeInLeft 1s forwards;
+			animation-delay: 2.6s;
+
+			img {
+				animation: globeMove 3s infinite alternate;
+				animation-delay: 2.6s;
+			}
+		}
+
+		.@{this}__semicircle {
+			animation: fadeInLeft 1s forwards;
+			animation-delay: 2.6s;
+
+			img {
+				animation: globeMove 3.5s infinite alternate;
+				animation-delay: 2.6s;
+			}
+		}
+
+		.@{this}__globe {
+			animation: fadeInRight 1s forwards;
+			animation-delay: 2.6s;
+
+			img {
+				animation: globeMove 5s infinite alternate;
+				animation-delay: 2.6s;
+			}
+		}
+
+		.@{this}__snowflake {
+			animation: fadeInRight 1s forwards;
+			animation-delay: 2.6s;
+
+			img {
+				animation: rotating 4.5s linear infinite;
+			}
+		}
+
+		.@{this}__star-blue {
+			animation: fadeInLeft 1s forwards;
+			animation-delay: 2.6s;
+
+			img {
+				animation: globeMove 2.8s infinite alternate;
+				animation-delay: 2.6s;
+			}
+		}
+
+		.@{this}__heading {
+			animation: fadeInUp2 1s;
+			animation-fill-mode: forwards;
+			animation-delay: 2.8s;
+		}
+
+		.@{this}__description {
+			animation: fadeInUp2 1s;
+			animation-fill-mode: forwards;
+			animation-delay: 3s;
+		}
+
+		.YearEndReview-Btn__primary,
+		.YearEndReview-Btn__secondary {
+			animation: opacityShow 1.5s;
+			animation-fill-mode: forwards;
+			animation-delay: 3.2s;
+		}
+
+		.YearEndReview-Btn__policy {
+			animation: opacityShow 1.5s;
+			animation-fill-mode: forwards;
+			animation-delay: 3.2s;
+		}
+	}
+}
