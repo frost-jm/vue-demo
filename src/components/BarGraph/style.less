@@ -1,0 +1,60 @@
+@import '../../assets/less/style.less';
+
+.YearEndBarGraph {
+	display: flex;
+	align-items: baseline;
+	height: 366px;
+	gap: 4px;
+	width: max-content;
+	margin: 0 auto;
+	// position: absolute;
+	// bottom: 30px;
+	// overflow: hidden;
+	left: 24px;
+
+	&__bar-container {
+		text-align: center;
+		height: 100%;
+		// overflow: hidden;
+	}
+
+	&__bar {
+		position: relative;
+		width: 101px;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		border-top-left-radius: 4px;
+		border-top-right-radius: 4px;
+		transition: height 0.3s ease;
+	}
+
+	&__icon {
+		position: absolute;
+		bottom: 16px;
+		width: 32px;
+		height: 32px;
+	}
+
+	&__points {
+		position: absolute;
+		top: 12px;
+		font-size: 16px;
+		font-family: @font-ProximaSoft-Bold;
+		line-height: 1.2;
+		color: #f1f8d6;
+		letter-spacing: 0.02em;
+		text-align: center;
+	}
+
+	&__label {
+		margin-top: 12px;
+		font-size: 12px;
+		font-family: @font-ProximaSoft-SemiBold;
+		line-height: 1.2;
+		color: #f1f8d6;
+		letter-spacing: 0.02em;
+		text-align: center;
+		opacity: 0.8;
+	}
+}

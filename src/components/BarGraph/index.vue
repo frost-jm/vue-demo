@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
 	<div class="bar-graph">
 		<div
 			v-for="(category, index) in categories"
@@ -23,9 +23,40 @@
 			<div class="label">{{ category.label }}</div>
 		</div>
 	</div>
+</template> -->
+
+<template>
+	<div class="YearEndBarGraph">
+		<div
+			v-for="(category, index) in categories"
+			:key="index"
+			class="YearEndBarGraph__bar-container"
+		>
+			<div
+				class="YearEndBarGraph__bar"
+				:style="{
+					backgroundColor: category.color,
+					height: '2%',
+				}"
+				:data-height="calculateHeight(category.points) + '%'"
+			>
+				<span class="YearEndBarGraph__points">{{ category.points }}</span>
+
+				<img
+					:src="category.icon"
+					alt="icon"
+					class="YearEndBarGraph__icon"
+				/>
+			</div>
+			<div class="YearEndBarGraph__label">{{ category.label }}</div>
+		</div>
+	</div>
 </template>
 
 <script>
+import './style.less';
+import { ref, onMounted } from 'vue';
+
 export default {
 	name: 'BarGraph',
 	props: {
@@ -37,79 +68,36 @@ export default {
 			},
 		},
 	},
-	data() {
-		return {
-			maxPoints: 0,
+	setup(props) {
+		const maxPoints = ref(0);
+
+		const calculateMaxPoints = () => {
+			maxPoints.value = Math.max(...props.categories.map((cat) => cat.points));
 		};
-	},
-	mounted() {
-		this.calculateMaxPoints();
-		this.animateBars();
-	},
-	methods: {
-		calculateMaxPoints() {
-			this.maxPoints = Math.max(...this.categories.map((cat) => cat.points));
-		},
-		calculateHeight(points) {
-			return (points / this.maxPoints) * 100;
-		},
-		animateBars() {
-			this.$nextTick(() => {
-				const bars = this.$el.querySelectorAll('.bar');
-				bars.forEach((bar) => {
-					setTimeout(() => {
-						bar.style.height = bar.dataset.height;
-						bar.style.transition = 'height 1s ease-in-out';
-					}, 100);
-				});
+
+		const calculateHeight = (points) => {
+			return (points / maxPoints.value) * 100;
+		};
+
+		const animateBars = () => {
+			const bars = document.querySelectorAll('.YearEndBarGraph__bar');
+			bars.forEach((bar) => {
+				setTimeout(() => {
+					bar.style.height = bar.dataset.height;
+					bar.style.transition = 'height 1s ease-in-out';
+				}, 100);
 			});
-		},
+		};
+
+		onMounted(() => {
+			calculateMaxPoints();
+			animateBars();
+		});
+
+		return {
+			maxPoints,
+			calculateHeight,
+		};
 	},
 };
 </script>
-
-<style scoped>
-.bar-graph {
-	display: flex;
-	align-items: baseline;
-	justify-content: space-around;
-	height: 300px;
-	border: 1px solid #ccc;
-	padding: 10px;
-}
-
-.bar-container {
-	text-align: center;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-}
-
-.bar {
-	position: relative;
-	width: 50px;
-	display: flex;
-	align-items: flex-end;
-	justify-content: center;
-	border-radius: 5px;
-}
-
-.icon {
-	position: absolute;
-	top: 5px;
-	width: 20px;
-	height: 20px;
-}
-
-.points {
-	position: absolute;
-	bottom: 5px;
-	color: white;
-	font-weight: bold;
-}
-
-.label {
-	margin-top: 10px;
-}
-</style>

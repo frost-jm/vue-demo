@@ -20,22 +20,22 @@ export default {
 		return {
 			categories: [
 				{
-					label: 'Category 1',
-					points: 500,
+					label: 'Express Send',
+					points: 1000,
 					icon: 'https://img.icons8.com/?size=100&id=59751&format=png&color=000000',
-					color: '#3498db',
+					color: '#96C754',
 				},
 				{
-					label: 'Category 2',
-					points: 300,
+					label: 'Bank Transfer',
+					points: 750,
 					icon: 'https://img.icons8.com/?size=100&id=VbL8v3mm1qyp&format=png&color=000000',
-					color: '#e74c3c',
+					color: '#F0BD45',
 				},
 				{
-					label: 'Category 3',
-					points: 100,
+					label: 'Padala',
+					points: 250,
 					icon: 'https://img.icons8.com/?size=100&id=23400&format=png&color=000000',
-					color: '#2ecc71',
+					color: '#138744',
 				},
 			],
 		};

@@ -22,6 +22,8 @@
 
 <script>
 import YearEndButton from '../../components/Button/index.vue';
+
+// Slide Down Transition Usage 
 import useSlideDown from '../../utils/slideDown.js';
 
 export default {

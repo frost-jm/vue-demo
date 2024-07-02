@@ -1,17 +1,19 @@
 <template>
-	<YearEndLaunchScreen
+	<!-- <YearEndLaunchScreen
 		v-if="showLaunchScreen"
 		:onLetsGoTap="handleLetsGoTap"
 		:onShowMeLaterTap="handleShowMeLaterTap"
 		:onPrivacyPolicyTap="handlePrivacyPolicyTap"
-	/>
-	<Timeline v-else />
+	/> -->
+	<!-- <Timeline /> -->
+	<YearEndGForest />
 </template>
 
 <script setup>
 import { ref } from 'vue';
 import YearEndLaunchScreen from './screens/year-end-launch-screen/index.vue';
 import Timeline from './components/Timeline/index.vue';
+import YearEndGForest from './screens/gforest/index.vue';
 import './assets/less/style.less';
 
 const showFadeTransition = ref(false);
